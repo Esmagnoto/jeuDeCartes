@@ -6,7 +6,10 @@
 #ifndef JEUDECARTES_DECK_H
 #define JEUDECARTES_DECK_H
 
+<<<<<<< HEAD
 #include "Carte.h"
+=======
+>>>>>>> origin/jeuDeCartes
 
 
 struct Deck{
@@ -30,4 +33,13 @@ void distribuerCartes();
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> origin/jeuDeCartes
 #endif //JEUDECARTES_DECK_H
