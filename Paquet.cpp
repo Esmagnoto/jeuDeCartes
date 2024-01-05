@@ -33,10 +33,11 @@ void initialiserpaquet(Paquet& p){
  * @param[in] p: le paquet de cartes a mélanger
  * @pre le paquet ne doit pas etre vide
  */
-void melanger(Paquet& p){
+/*void melanger(Paquet& p){
     assert(p.cartes[0].quantite != 0);
     for (int i = 0; i < MAX_CARTES; ++i) {
         int j = rand()
         p.cartes[i] = p.cartes[j]
     }
 }
+*/
