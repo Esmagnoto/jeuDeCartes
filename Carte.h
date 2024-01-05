@@ -1,14 +1,11 @@
 /**
  * @author ESMAGNOTO CAIO
- * @version 171223
- */
-
-#ifndef JEUDECARTES_CARTE_H
-#define JEUDECARTES_CARTE_H
-/**
+ * @version 271223
  * @file Carte.h
  * @brief Entete du composant  type carte
- */
+ **/
+#ifndef JEUDECARTES_CARTE_H
+#define JEUDECARTES_CARTE_H
 
 /**
  * @brief Struct de données de type Carte
