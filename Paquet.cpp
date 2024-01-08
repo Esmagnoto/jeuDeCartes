@@ -16,17 +16,23 @@ using namespace std;
  * @param[in] p: Le paquet a etre initialisé
  */
 void initialiserpaquet(Paquet& p){
-    unsigned int indices[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+    //unsigned int indices[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
     unsigned int quantite[] ={2,2,2,2,5,1,2,2,4,1,1,2,1,3,2,1,1,3,3,3,3,1,1,1,1,1};
     unsigned int points[] = {10,2,8,6,10,2,4,8,10,6,8,8,8,8,8,8,4,8,8,8,8,8,8,2,4,2};
     char lettre ='A';
-    for(unsigned int i =0; i < sizeof(indices)/sizeof(indices[0]);i++){
-        p.cartes[i].quantite = quantite[i];
-        p.cartes[i].points = points[i];
-        p.cartes[i].lettre = lettre;
+    unsigned int indice = 0;
+
+    for(unsigned int i =0; i < MAX_CARTES; ){ //sizeof(indices)/sizeof(indices[0])
+        for(unsigned int k = 1; k <= quantite[indice];k++){ //para cada quantidade[i]
+            p.cartes[i].numeroCarte = k;
+            p.cartes[i].points = points[indice];
+            p.cartes[i].lettre = lettre;
+            i++;}
+
         lettre++;
+        indice++;
+
     }
-}
 
 /**
  * @brief Melanger les cartes du paquet
