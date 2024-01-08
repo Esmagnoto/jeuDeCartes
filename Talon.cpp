@@ -1,9 +1,9 @@
 /**
- * @author ESMAGNOTO CAIO
- * @version 271223
- * @file Talon.cpp
- * @brief Corps du composant d'un Talon de cartes
- **/
+* @author ESMAGNOTO CAIO
+* @version 271223
+* @file Talon.cpp
+* @brief Corps du composant d'un Talon de cartes
+**/
 #include "Talon.h"
 #include <iostream>
 #include <cassert>
@@ -17,11 +17,11 @@ using namespace std;
  * @param[in] c: capacité du talon (nb maximum d'items stockés)
  * @pre c>0
  **/
-void initialiser(Talon& t, unsigned int c){
-    assert(c>0);
-    t.capacite = c;
-    t.tab = new Carte[c];
-    t.sommet = -1;
+void initialiser(Talon& t, unsigned int c) {
+assert(c > 0);
+t.capacite = c;
+t.tab = new Carte[c];
+t.sommet = -1;
 }
 
 /**
@@ -29,8 +29,9 @@ void initialiser(Talon& t, unsigned int c){
  * @see initialiser, le talon a déjà été initialisée
  * @param[in, out] t: le talon à désallouer
  */
-void detruire(Talon& t){
-    delete [] t.tab;
+void detruiret(Talon& t) {
+
+    delete[] t.tab;
     t.tab = nullptr;
 }
 
@@ -39,8 +40,8 @@ void detruire(Talon& t){
 * @param[in] t: le talon testé
 * @return true si t est plein, false sinon
 */
-bool estPleine(const Talon& t){
-    return(t.sommet == (t.capacite-1));
+bool estPleine(const Talon& t) {
+    return(t.sommet == (t.capacite - 1));
 }
 
 /**
@@ -48,7 +49,7 @@ bool estPleine(const Talon& t){
 * @param[in] t: le talon testé
 * @return true si t est vide, false sinon
 */
-bool estVide(const Talon& t){
+bool estVide(const Talon& t) {
     return(t.sommet == -1);
 }
 
@@ -58,7 +59,7 @@ bool estVide(const Talon& t){
  * @return la valeur de la carte au sommet du talon
  * @pre le talon n'est pas vide
  */
-Carte sommet(const Talon& t){
+Carte sommet(const Talon& t) {
     assert(!estVide(t));
     return t.tab[t.sommet];
 }
@@ -69,10 +70,10 @@ Carte sommet(const Talon& t){
 * @param[in] it la carte a empiler
 * @pre t n'est pas plein
 */
-void empiler(Talon& t, const Carte& it){
-    assert(!estPleine(t));
-    t.sommet++;
-    t.tab[t.sommet] = it;
+void empiler(Talon& t, const Carte& it) {
+assert(!estPleine(t));
+t.sommet++;
+t.tab[t.sommet] = it;
 }
 
 /**
@@ -80,7 +81,7 @@ void empiler(Talon& t, const Carte& it){
 * @param[in, out] t: le talon
 * @pre t n'est pas vide
 */
-void depiler(Talon& t){
+void depiler(Talon& t) {
     assert(!estVide(t));
     t.sommet--;
 }

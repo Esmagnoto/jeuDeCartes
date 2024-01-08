@@ -9,15 +9,17 @@
 #define JEUDECARTES_PAQUET_H
 
 #include "Carte.h"
+#include "Joueur.h"
 /**
- * @brief Nom pour remplacer les nombres magiques nb des cartes
+ * @brief Nom pour remplacer les nombres magiques
  */
-enum{MAX_CARTES=51};
+enum { MAX_CARTES = 51, CARTES_M = 10 };
+
 
 /**
  * @brief Struct d'un paquet de cartes
  */
-struct Paquet{
+struct Paquet {
     Carte cartes[MAX_CARTES];
 };
 
@@ -32,6 +34,14 @@ void initialiserpaquet(Paquet& p);
  * @param[in] p: le paquet de cartes a mélanger
  * @pre le paquet ne doit pas etre vide assert(p.cartes[0].quantite != 0);
  */
+
+int nbRand();
+
+/**
+ * @brief Melanger les cartes du paquet
+ * @param[in] p: le paquet de cartes a mélanger
+ * @pre le paquet ne doit pas etre vide
+ */
 void melanger(Paquet& p);
 
 /**
@@ -40,7 +50,7 @@ void melanger(Paquet& p);
  * @param[in] p: le paquet de cartes à distribuer
  * @pre le paquet ne doit pas etre vide assert(p.cartes[0].quantite != 0);
  */
-void distribuercartes(Paquet& p);
+void distribuercartes(Paquet& p, Joueurs& j);
 
 
 

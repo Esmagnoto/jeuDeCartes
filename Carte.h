@@ -10,10 +10,10 @@
 /**
  * @brief Struct de données de type Carte
  */
-struct Carte{
+struct Carte {
     char lettre;
     unsigned int points;
-    unsigned int quantite;
+    unsigned int numeroCarte;
 };
 
 #endif //JEUDECARTES_CARTE_H

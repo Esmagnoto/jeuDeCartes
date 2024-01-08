@@ -11,7 +11,7 @@
 /**
  * @brief Struct d'un Talon
  */
-struct Talon{
+struct Talon {
     unsigned short capacite; //Capacite du talon (capacité > 0)
     Carte* tab; // tableau des éléments de Talon en mémoire dynamique
     int sommet; // indice de sommet du talon dnas tab
@@ -32,7 +32,7 @@ void initialiser(Talon& t, unsigned int c);
  * @see initialiser, le talon a déjà été initialisée
  * @param[in, out] t: le talon à désallouer
  */
-void detruire(Talon& t);
+void detruiret(Talon& t);
 
 /**
 * @brief Savoir se le talon est plein
