@@ -13,7 +13,7 @@
 struct Carte{
     char lettre;
     unsigned int points;
-    unsigned int quantite;
+    unsigned int numeroCarte;
 };
 
 #endif //JEUDECARTES_CARTE_H
