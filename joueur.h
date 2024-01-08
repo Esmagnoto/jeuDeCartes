@@ -19,6 +19,7 @@
  **/
 struct Joueur {
     Carte cartesMain[10];
+    int nbOrdre;
 };
 
 struct Joueurs {

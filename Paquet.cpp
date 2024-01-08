@@ -17,8 +17,8 @@
 using namespace std;
 
 /**
- * @brief Initialiser le paquet avec 52 cartes
- * @param[in] p: Le paquet a etre initialisé
+ * @brief Initialiser le paquet avec 51 cartes
+ * @param[in] p: Le paquet va être initialisé
  */
 void initialiserpaquet(Paquet& p) {
     //unsigned int indices[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
@@ -56,14 +56,26 @@ void melanger(Paquet& p) {
     }
 }
 
+
+
+
 /**
- * @brief Distribuer les cartes, cette fonction vas distribuer les cartes entre les joeurs
- * à la fin les cartes restantes doivent aller au talon face caché
+ * @brief Distribuer les cartes, cette fonction va distribuer les cartes entre les joeurs
+ * à la fin les cartes restantes doivent aller au talon face cachée
  * @param[in] p: le paquet de cartes à distribuer
  * @pre le paquet ne doit pas etre vide assert(p.cartes[0].quantite != 0);
  */
-void distribuercartes(Paquet& p, Talon& t, Joueurs& j) {
-    for (int i = 0; i < sizeof(j.joueur)/sizeof(j.joueur[0]); i++) { // Pour chaque joueur
+void distribuercartes(Paquet& p, Talon& t,Talon& texpose, Joueurs& j) {
+    melanger(p); // melange les cartes
+
+
+    for (int i = 0; i < MAX_CARTES; ++i) { // empile les cartes dans un talon
+        empiler(t,p.cartes[i]);
+    }
+    empiler (texpose,sommet(t));// empile le carte dans un talon exposee
+    depiler(t);
+
+    for (int i = 0; i < 2; i++) { // distribui  les cartes pour chaque joueur
         assert(p.cartes[0].numeroCarte != 0);
         for (int c = 0; c < CARTES_M; c++) {
             j.joueur[i].cartesMain[c] = sommet(t);

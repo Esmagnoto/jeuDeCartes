@@ -10,6 +10,7 @@
 
 #include "Carte.h"
 #include "Joueur.h"
+#include "Talon.h"
 /**
  * @brief Nom pour remplacer les nombres magiques
  */
@@ -50,7 +51,7 @@ void melanger(Paquet& p);
  * @param[in] p: le paquet de cartes à distribuer
  * @pre le paquet ne doit pas etre vide assert(p.cartes[0].quantite != 0);
  */
-void distribuercartes(Paquet& p, Joueurs& j);
+void distribuercartes(Paquet &p, Talon &t, Talon& texposee, Joueurs &j);
 
 
 

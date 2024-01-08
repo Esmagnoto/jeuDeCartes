@@ -9,23 +9,30 @@ using namespace std;
 int main() {
     Paquet paquet{};
     Talon talon{};
+    Talon exposee{};
     Joueurs joueurs{};
-    cout << "paquet.cartes avant initialiser" << " " << paquet.cartes << endl;
+
     initialiserpaquet(paquet);
     initialiserjoeurs(joueurs);
     initialiser(talon,51);
-    cout << "paquet.cartes apres initialiser" << endl;
-    for (int i = 0; i < MAX_CARTES; i++) {
-        cout << paquet.cartes[i].lettre << " "
-             << " " << paquet.cartes[i].points << endl;
+    initialiser(exposee, 51);
+
+
+    char input[10];
+    while(1){
+
+        cout <<"(Commandes valides : TEPRC)" << endl;
+        cout <<"* Joueur "<<joueurs.joueur->nbOrdre <<" ("<<exposee.sommet<<") "<< "Cartes du joueur" << endl;
+        cin >> input ;
+
+        distribuercartes(paquet, talon, exposee, joueurs);
+        return 0;
     }
-    melanger(paquet);
-    cout << "----------------------------------------------------------------------------------------------" << endl;
-    for (int i = 0; i < MAX_CARTES; i++) {
-        cout << paquet.cartes[i].lettre << " "
-             << " " << paquet.cartes[i].points << endl;
-    }
+
+
+
     detruirej(joueurs);
     detruiret(talon);
+    detruiret(exposee);
     return 0;
 }
