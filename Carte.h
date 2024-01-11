@@ -10,7 +10,7 @@
 /**
  * @brief Struct de données de type Carte
  */
-struct Carte{
+struct Carte {
     char lettre;
     unsigned int points;
     unsigned int numeroCarte;
