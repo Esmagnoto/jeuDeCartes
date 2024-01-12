@@ -13,19 +13,20 @@ int main() {
     Joueurs joueurs{};
 
     initialiserpaquet(paquet);
-    initialiserjoeurs(joueurs);
     initialiser(talon,51);
     initialiser(exposee, 51);
+    int nbJoeurs;
+    cout <<"Combien de joeurs ?" << endl;
+    cin >> nbJoeurs;
+    initialiserjoeurs(joueurs,nbJoeurs);
+    distribuercartes(paquet, talon, exposee, joueurs);
 
 
-    char input[10];
     while(1){
-
         cout <<"(Commandes valides : TEPRC)" << endl;
-        cout <<"* Joueur "<<joueurs.joueur->nbOrdre <<" ("<<exposee.sommet<<") "<< "Cartes du joueur" << endl;
-        cin >> input ;
+        affichersituation(joueurs,exposee);
 
-        distribuercartes(paquet, talon, exposee, joueurs);
+
         return 0;
     }
 

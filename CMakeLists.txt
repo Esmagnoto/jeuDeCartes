@@ -8,5 +8,5 @@ add_executable(jeuDeCartes main.cpp
         Talon.h
         Paquet.cpp
         Paquet.h
-        joueur.cpp
-        joueur.h)
+        Joueur.cpp
+        Joueur.h)

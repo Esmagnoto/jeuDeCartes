@@ -7,7 +7,9 @@
 #ifndef JEUDECARTES_TALON_H
 #define JEUDECARTES_TALON_H
 #include "Carte.h"
-
+#include "Joueur.h"
+#include <iostream>
+#include <cassert>
 /**
  * @brief Struct d'un Talon
  */
@@ -71,5 +73,7 @@ void empiler(Talon& t, const Carte& it);
 */
 void depiler(Talon& t);
 
+
+void affichersituation(Joueurs& j, Talon& e);
 
 #endif //JEUDECARTES_TALON_H

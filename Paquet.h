@@ -11,11 +11,16 @@
 #include "Carte.h"
 #include "Joueur.h"
 #include "Talon.h"
+#include <iostream>
+#include <cstdlib>
+#include <cassert>
+#include <ctime>
+
+
 /**
  * @brief Nom pour remplacer les nombres magiques
  */
 enum { MAX_CARTES = 51, CARTES_M = 10 };
-
 
 /**
  * @brief Struct d'un paquet de cartes
@@ -29,14 +34,6 @@ struct Paquet {
  * @param[in] p: Le paquet a etre initialisé
  */
 void initialiserpaquet(Paquet& p);
-
-/**
- * @brief Melanger les cartes du paquet
- * @param[in] p: le paquet de cartes a mélanger
- * @pre le paquet ne doit pas etre vide assert(p.cartes[0].quantite != 0);
- */
-
-int nbRand();
 
 /**
  * @brief Melanger les cartes du paquet

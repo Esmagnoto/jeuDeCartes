@@ -5,8 +5,8 @@
 * @brief Corps du composant d'un Talon de cartes
 **/
 #include "Talon.h"
-#include <iostream>
-#include <cassert>
+
+
 using namespace std;
 
 /**
@@ -84,4 +84,12 @@ t.tab[t.sommet] = it;
 void depiler(Talon& t) {
     assert(!estVide(t));
     t.sommet--;
+}
+
+void affichersituation(Joueurs& j, Talon& e){
+    cout <<"* Joueur "<<j.joueur[0].nbOrdre <<" ("<<e.tab[e.sommet].lettre<<") "<< j.joueur[0].cartesMain[0].lettre
+    << j.joueur[0].cartesMain[1].lettre<<j.joueur[0].cartesMain[2].lettre<<
+    j.joueur[0].cartesMain[3].lettre<<j.joueur[0].cartesMain[4].lettre<<j.joueur[0].cartesMain[5].lettre<<
+    j.joueur[0].cartesMain[6].lettre<<j.joueur[0].cartesMain[7].lettre<<j.joueur[0].cartesMain[8].lettre <<j.joueur[0].cartesMain[9].lettre<< endl;
+
 }

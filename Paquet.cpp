@@ -5,15 +5,9 @@
  * @brief Corps du composant d'un paquet de cartes
  **/
 
-#include <iostream>
-#include <cstdlib>
-#include <cassert>
-#include <ctime>
-#include <thread>
-#include <chrono>
+
 #include "Paquet.h"
-#include "Joueur.h"
-#include "Talon.h"
+
 using namespace std;
 
 /**
@@ -83,3 +77,4 @@ void distribuercartes(Paquet& p, Talon& t,Talon& texpose, Joueurs& j) {
         }
     }
 }
+
